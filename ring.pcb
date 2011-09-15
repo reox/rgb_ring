@@ -1,7 +1,7 @@
 # release: pcb 20100929
-# date:    Thu Sep 15 16:36:59 2011
-# user:    chrysn (Christian M. Amsüss)
-# host:    hephaistos
+# date:    Thu Sep 15 21:31:16 2011
+# user:    reox (Sebastian Bachmann,,,)
+# host:    e212-099.eduroam.tuwien.ac.at
 
 # To read pcb files, the pcb version (or the git source date) must be >= the file version
 FileVersion[20100606]
@@ -798,7 +798,7 @@ Symbol('~' 12)
 	SymbolLine(20 35 25 30 8)
 )
 
-Element["" "htssop28" "U2" "unknown" 294687 251770 0 0 0 100 ""]
+Element["" "htssop28" "U2" "unknown" 137206 259645 0 0 0 100 ""]
 (
 	Pad[-13190 -17912 -9253 -17912 1181 2000 3181 "" "28" "onsolder"]
 	Pad[-13190 -15353 -9253 -15353 1181 2000 3181 "" "27" "onsolder"]
@@ -837,7 +837,207 @@ Element["" "htssop28" "U2" "unknown" 294687 251770 0 0 0 100 ""]
 
 	)
 
-Element["" "htssop28" "U1" "unknown" 204135 258661 0 0 0 100 ""]
+Element["" "PLCC6" "LED2" "00862" 437008 311024 0 0 0 100 ""]
+(
+	Pad[9678 -4306 13421 -3090 5512 2000 4500 "" "4" "onsolder,square"]
+	Pad[7488 2433 11231 3649 5512 2000 4500 "" "5" "onsolder,square,edge2"]
+	Pad[5298 9172 9042 10388 5512 2000 4500 "" "6" "onsolder,square,edge2"]
+	Pad[-9043 -10389 -5299 -9173 5512 2000 4500 "" "3" "onsolder,square"]
+	Pad[-11232 -3650 -7489 -2434 5512 2000 4500 "" "2" "onsolder,square"]
+	Pad[-13422 3089 -9679 4305 5512 2000 4500 "" "1" "onsolder,square,edge2"]
+	ElementLine [12402 -6320 6319 12401 1000]
+	ElementLine [-6319 -12403 -11794 4447 1000]
+	ElementLine [6319 12401 -10530 6927 1000]
+	ElementLine [-10530 6927 -11794 4447 1000]
+	ElementLine [-6319 -12403 12402 -6320 1000]
+	ElementArc [0 0 8268 8268 162 90 1000]
+	ElementArc [0 -1 8268 8268 72 90 1000]
+	ElementArc [0 0 8268 8268 252 90 1000]
+	ElementArc [0 -1 8268 8268 342 90 1000]
+
+	)
+
+Element["" "PLCC6" "LED9" "00862" 137795 409449 0 0 0 100 ""]
+(
+	Pad[-1210 13719 1104 10535 5512 2000 4500 "" "4" "onsolder,square,edge2"]
+	Pad[-6942 9554 -4629 6370 5512 2000 4500 "" "5" "onsolder,square,edge2"]
+	Pad[-12675 5389 -10361 2205 5512 2000 4500 "" "6" "onsolder,square,edge2"]
+	Pad[10360 -2206 12674 -5390 5512 2000 4500 "" "3" "onsolder,square"]
+	Pad[4628 -6371 6941 -9555 5512 2000 4500 "" "2" "onsolder,square"]
+	Pad[-1105 -10536 1209 -13720 5512 2000 4500 "" "1" "onsolder,square"]
+	ElementLine [2177 13748 -13748 2178 1000]
+	ElementLine [13748 -2177 -586 -12591 1000]
+	ElementLine [-13748 2178 -3335 -12156 1000]
+	ElementLine [-3335 -12156 -586 -12591 1000]
+	ElementLine [13748 -2177 2177 13748 1000]
+	ElementArc [0 0 8268 8268 54 90 1000]
+	ElementArc [0 0 8268 8268 324 90 1000]
+	ElementArc [0 0 8268 8268 144 90 1000]
+	ElementArc [0 0 8268 8268 234 90 1000]
+
+	)
+
+Element["" "PLCC6" "LED5" "00862" 251969 55118 0 0 0 100 ""]
+(
+	Pad[-7086 -11810 -7086 -7874 5512 2000 4500 "" "4" "onsolder,square"]
+	Pad[0 -11810 0 -7874 5512 2000 4500 "" "5" "onsolder,square"]
+	Pad[7086 -11810 7086 -7874 5512 2000 4500 "" "6" "onsolder,square"]
+	Pad[-7086 7874 -7086 11810 5512 2000 4500 "" "3" "onsolder,square,edge2"]
+	Pad[0 7874 0 11810 5512 2000 4500 "" "2" "onsolder,square,edge2"]
+	Pad[7086 7874 7086 11810 5512 2000 4500 "" "1" "onsolder,square,edge2"]
+	ElementLine [-9843 -9843 9842 -9843 1000]
+	ElementLine [-9843 9842 7874 9842 1000]
+	ElementLine [9842 -9843 9842 7874 1000]
+	ElementLine [9842 7874 7874 9842 1000]
+	ElementLine [-9843 9842 -9843 -9843 1000]
+	ElementArc [0 0 8268 8268 270 90 1000]
+	ElementArc [-1 0 8268 8268 180 90 1000]
+	ElementArc [0 0 8268 8268 0 90 1000]
+	ElementArc [-1 0 8268 8268 90 90 1000]
+
+	)
+
+Element["" "PLCC6" "LED1" "00862" 366142 409449 0 0 0 100 ""]
+(
+	Pad[10360 2205 12674 5389 5512 2000 4500 "" "4" "onsolder,square,edge2"]
+	Pad[4628 6370 6941 9554 5512 2000 4500 "" "5" "onsolder,square,edge2"]
+	Pad[-1105 10535 1209 13719 5512 2000 4500 "" "6" "onsolder,square,edge2"]
+	Pad[-1210 -13720 1104 -10536 5512 2000 4500 "" "3" "onsolder,square"]
+	Pad[-6942 -9555 -4629 -6371 5512 2000 4500 "" "2" "onsolder,square"]
+	Pad[-12675 -5390 -10361 -2206 5512 2000 4500 "" "1" "onsolder,square"]
+	ElementLine [13748 2177 -2177 13748 1000]
+	ElementLine [2178 -13748 -12156 -3335 1000]
+	ElementLine [-2177 13748 -12591 -586 1000]
+	ElementLine [-12591 -586 -12156 -3335 1000]
+	ElementLine [2178 -13748 13748 2177 1000]
+	ElementArc [0 0 8268 8268 126 90 1000]
+	ElementArc [0 -1 8268 8268 36 90 1000]
+	ElementArc [0 0 8268 8268 216 90 1000]
+	ElementArc [0 -1 8268 8268 306 90 1000]
+
+	)
+
+Element["" "PLCC6" "LED8" "00862" 66929 311024 0 0 0 100 ""]
+(
+	Pad[-9043 10388 -5299 9172 5512 2000 4500 "" "4" "onsolder,square,edge2"]
+	Pad[-11232 3649 -7489 2433 5512 2000 4500 "" "5" "onsolder,square,edge2"]
+	Pad[-13422 -3090 -9679 -4306 5512 2000 4500 "" "6" "onsolder,square"]
+	Pad[9678 4305 13421 3089 5512 2000 4500 "" "3" "onsolder,square,edge2"]
+	Pad[7488 -2434 11231 -3650 5512 2000 4500 "" "2" "onsolder,square"]
+	Pad[5298 -9173 9042 -10389 5512 2000 4500 "" "1" "onsolder,square"]
+	ElementLine [-6320 12402 -12403 -6319 1000]
+	ElementLine [12401 6319 6927 -10530 1000]
+	ElementLine [-12403 -6319 4447 -11794 1000]
+	ElementLine [4447 -11794 6927 -10530 1000]
+	ElementLine [12401 6319 -6320 12402 1000]
+	ElementArc [0 0 8268 8268 18 90 1000]
+	ElementArc [0 0 8268 8268 288 90 1000]
+	ElementArc [0 0 8268 8268 108 90 1000]
+	ElementArc [0 0 8268 8268 198 90 1000]
+
+	)
+
+Element["" "PLCC6" "LED3" "00862" 437008 192913 0 0 0 100 ""]
+(
+	Pad[5298 -9173 9042 -10389 5512 2000 4500 "" "4" "onsolder,square"]
+	Pad[7488 -2434 11231 -3650 5512 2000 4500 "" "5" "onsolder,square"]
+	Pad[9678 4305 13421 3089 5512 2000 4500 "" "6" "onsolder,square,edge2"]
+	Pad[-13422 -3090 -9679 -4306 5512 2000 4500 "" "3" "onsolder,square"]
+	Pad[-11232 3649 -7489 2433 5512 2000 4500 "" "2" "onsolder,square,edge2"]
+	Pad[-9043 10388 -5299 9172 5512 2000 4500 "" "1" "onsolder,square,edge2"]
+	ElementLine [6319 -12403 12402 6318 1000]
+	ElementLine [-12402 -6320 -6928 10529 1000]
+	ElementLine [12402 6318 -4448 11793 1000]
+	ElementLine [-4448 11793 -6928 10529 1000]
+	ElementLine [-12402 -6320 6319 -12403 1000]
+	ElementArc [0 0 8268 8268 198 90 1000]
+	ElementArc [-1 -1 8268 8268 108 90 1000]
+	ElementArc [0 0 8268 8268 288 90 1000]
+	ElementArc [-1 -1 8268 8268 18 90 1000]
+
+	)
+
+Element["" "PLCC6" "LED0" "00862" 251969 448819 0 0 0 100 ""]
+(
+	Pad[7086 7874 7086 11810 5512 2000 4500 "" "4" "onsolder,square,edge2"]
+	Pad[0 7874 0 11810 5512 2000 4500 "" "5" "onsolder,square,edge2"]
+	Pad[-7086 7874 -7086 11810 5512 2000 4500 "" "6" "onsolder,square,edge2"]
+	Pad[7086 -11810 7086 -7874 5512 2000 4500 "" "3" "onsolder,square"]
+	Pad[0 -11810 0 -7874 5512 2000 4500 "" "2" "onsolder,square"]
+	Pad[-7086 -11810 -7086 -7874 5512 2000 4500 "" "1" "onsolder,square"]
+	ElementLine [9843 9843 -9842 9843 1000]
+	ElementLine [9843 -9842 -7874 -9842 1000]
+	ElementLine [-9842 9843 -9842 -7874 1000]
+	ElementLine [-9842 -7874 -7874 -9842 1000]
+	ElementLine [9843 -9842 9843 9843 1000]
+	ElementArc [0 0 8268 8268 90 90 1000]
+	ElementArc [1 0 8268 8268 0 90 1000]
+	ElementArc [0 0 8268 8268 180 90 1000]
+	ElementArc [1 0 8268 8268 270 90 1000]
+
+	)
+
+Element["" "PLCC6" "LED4" "00862" 366142 94488 0 0 0 100 ""]
+(
+	Pad[-1105 -10536 1209 -13720 5512 2000 4500 "" "4" "onsolder,square"]
+	Pad[4628 -6371 6941 -9555 5512 2000 4500 "" "5" "onsolder,square"]
+	Pad[10360 -2206 12674 -5390 5512 2000 4500 "" "6" "onsolder,square"]
+	Pad[-12675 5389 -10361 2205 5512 2000 4500 "" "3" "onsolder,square,edge2"]
+	Pad[-6942 9554 -4629 6370 5512 2000 4500 "" "2" "onsolder,square,edge2"]
+	Pad[-1210 13719 1104 10535 5512 2000 4500 "" "1" "onsolder,square,edge2"]
+	ElementLine [-2178 -13749 13747 -2179 1000]
+	ElementLine [-13749 2176 585 12590 1000]
+	ElementLine [13747 -2179 3334 12155 1000]
+	ElementLine [3334 12155 585 12590 1000]
+	ElementLine [-13749 2176 -2178 -13749 1000]
+	ElementArc [0 0 8268 8268 234 90 1000]
+	ElementArc [-1 -1 8268 8268 144 90 1000]
+	ElementArc [0 0 8268 8268 324 90 1000]
+	ElementArc [-1 -1 8268 8268 54 90 1000]
+
+	)
+
+Element["" "PLCC6" "LED6" "00862" 137795 94488 0 0 0 100 ""]
+(
+	Pad[-12675 -5390 -10361 -2206 5512 2000 4500 "" "4" "onsolder,square"]
+	Pad[-6942 -9555 -4629 -6371 5512 2000 4500 "" "5" "onsolder,square"]
+	Pad[-1210 -13720 1104 -10536 5512 2000 4500 "" "6" "onsolder,square"]
+	Pad[-1105 10535 1209 13719 5512 2000 4500 "" "3" "onsolder,square,edge2"]
+	Pad[4628 6370 6941 9554 5512 2000 4500 "" "2" "onsolder,square,edge2"]
+	Pad[10360 2205 12674 5389 5512 2000 4500 "" "1" "onsolder,square,edge2"]
+	ElementLine [-13749 -2178 2176 -13749 1000]
+	ElementLine [-2179 13747 12155 3334 1000]
+	ElementLine [2176 -13749 12590 585 1000]
+	ElementLine [12590 585 12155 3334 1000]
+	ElementLine [-2179 13747 -13749 -2178 1000]
+	ElementArc [0 0 8268 8268 306 90 1000]
+	ElementArc [-1 0 8268 8268 216 90 1000]
+	ElementArc [0 0 8268 8268 36 90 1000]
+	ElementArc [-1 0 8268 8268 126 90 1000]
+
+	)
+
+Element["" "PLCC6" "LED7" "00862" 66929 192913 0 0 0 100 ""]
+(
+	Pad[-13422 3089 -9679 4305 5512 2000 4500 "" "4" "onsolder,square,edge2"]
+	Pad[-11232 -3650 -7489 -2434 5512 2000 4500 "" "5" "onsolder,square"]
+	Pad[-9043 -10389 -5299 -9173 5512 2000 4500 "" "6" "onsolder,square"]
+	Pad[5298 9172 9042 10388 5512 2000 4500 "" "3" "onsolder,square,edge2"]
+	Pad[7488 2433 11231 3649 5512 2000 4500 "" "2" "onsolder,square,edge2"]
+	Pad[9678 -4306 13421 -3090 5512 2000 4500 "" "1" "onsolder,square"]
+	ElementLine [-12403 6319 -6320 -12402 1000]
+	ElementLine [6318 12402 11793 -4448 1000]
+	ElementLine [-6320 -12402 10529 -6928 1000]
+	ElementLine [10529 -6928 11793 -4448 1000]
+	ElementLine [6318 12402 -12403 6319 1000]
+	ElementArc [0 0 8268 8268 342 90 1000]
+	ElementArc [-1 0 8268 8268 252 90 1000]
+	ElementArc [0 0 8268 8268 72 90 1000]
+	ElementArc [-1 0 8268 8268 162 90 1000]
+
+	)
+
+Element["" "htssop28" "U1" "unknown" 365553 262598 0 0 0 100 ""]
 (
 	Pad[-13190 -17912 -9253 -17912 1181 2000 3181 "" "28" "onsolder"]
 	Pad[-13190 -15353 -9253 -15353 1181 2000 3181 "" "27" "onsolder"]
@@ -873,206 +1073,6 @@ Element["" "htssop28" "U1" "unknown" 204135 258661 0 0 0 100 ""]
 	ElementLine [-12992 18110 -12993 -20079 394]
 	ElementArc [0 -19881 1771 1771 90 90 394]
 	ElementArc [0 -20079 1969 1969 0 90 394]
-
-	)
-
-Element["" "PLCC6" "LED0" "00862" 251968 446850 0 0 0 100 ""]
-(
-	Pad[7874 -7086 11810 -7086 5512 2000 4500 "" "4" "onsolder,square,edge2"]
-	Pad[7874 0 11810 0 5512 2000 4500 "" "5" "onsolder,square,edge2"]
-	Pad[7874 7086 11810 7086 5512 2000 4500 "" "6" "onsolder,square,edge2"]
-	Pad[-11810 -7086 -7874 -7086 5512 2000 4500 "" "3" "onsolder,square"]
-	Pad[-11810 0 -7874 0 5512 2000 4500 "" "2" "onsolder,square"]
-	Pad[-11810 7086 -7874 7086 5512 2000 4500 "" "1" "onsolder,square"]
-	ElementLine [9843 -9843 9843 9842 1000]
-	ElementLine [-9842 -9843 -9842 7874 1000]
-	ElementLine [9843 9842 -7874 9842 1000]
-	ElementLine [-7874 9842 -9842 7874 1000]
-	ElementLine [-9842 -9843 9843 -9843 1000]
-	ElementArc [0 0 8268 8268 180 90 1000]
-	ElementArc [0 -1 8268 8268 90 90 1000]
-	ElementArc [0 0 8268 8268 270 90 1000]
-	ElementArc [0 -1 8268 8268 0 90 1000]
-
-	)
-
-Element["" "PLCC6" "LED1" "00862" 366517 409631 0 0 0 100 ""]
-(
-	Pad[7874 -7086 11810 -7086 5512 2000 4500 "" "4" "onsolder,square,edge2"]
-	Pad[7874 0 11810 0 5512 2000 4500 "" "5" "onsolder,square,edge2"]
-	Pad[7874 7086 11810 7086 5512 2000 4500 "" "6" "onsolder,square,edge2"]
-	Pad[-11810 -7086 -7874 -7086 5512 2000 4500 "" "3" "onsolder,square"]
-	Pad[-11810 0 -7874 0 5512 2000 4500 "" "2" "onsolder,square"]
-	Pad[-11810 7086 -7874 7086 5512 2000 4500 "" "1" "onsolder,square"]
-	ElementLine [9843 -9843 9843 9842 1000]
-	ElementLine [-9842 -9843 -9842 7874 1000]
-	ElementLine [9843 9842 -7874 9842 1000]
-	ElementLine [-7874 9842 -9842 7874 1000]
-	ElementLine [-9842 -9843 9843 -9843 1000]
-	ElementArc [0 0 8268 8268 180 90 1000]
-	ElementArc [0 -1 8268 8268 90 90 1000]
-	ElementArc [0 0 8268 8268 270 90 1000]
-	ElementArc [0 -1 8268 8268 0 90 1000]
-
-	)
-
-Element["" "PLCC6" "LED2" "00862" 437312 312190 0 0 0 100 ""]
-(
-	Pad[7874 -7086 11810 -7086 5512 2000 4500 "" "4" "onsolder,square,edge2"]
-	Pad[7874 0 11810 0 5512 2000 4500 "" "5" "onsolder,square,edge2"]
-	Pad[7874 7086 11810 7086 5512 2000 4500 "" "6" "onsolder,square,edge2"]
-	Pad[-11810 -7086 -7874 -7086 5512 2000 4500 "" "3" "onsolder,square"]
-	Pad[-11810 0 -7874 0 5512 2000 4500 "" "2" "onsolder,square"]
-	Pad[-11810 7086 -7874 7086 5512 2000 4500 "" "1" "onsolder,square"]
-	ElementLine [9843 -9843 9843 9842 1000]
-	ElementLine [-9842 -9843 -9842 7874 1000]
-	ElementLine [9843 9842 -7874 9842 1000]
-	ElementLine [-7874 9842 -9842 7874 1000]
-	ElementLine [-9842 -9843 9843 -9843 1000]
-	ElementArc [0 0 8268 8268 180 90 1000]
-	ElementArc [0 -1 8268 8268 90 90 1000]
-	ElementArc [0 0 8268 8268 270 90 1000]
-	ElementArc [0 -1 8268 8268 0 90 1000]
-
-	)
-
-Element["" "PLCC6" "LED3" "00862" 437312 191746 0 0 0 100 ""]
-(
-	Pad[7874 -7086 11810 -7086 5512 2000 4500 "" "4" "onsolder,square,edge2"]
-	Pad[7874 0 11810 0 5512 2000 4500 "" "5" "onsolder,square,edge2"]
-	Pad[7874 7086 11810 7086 5512 2000 4500 "" "6" "onsolder,square,edge2"]
-	Pad[-11810 -7086 -7874 -7086 5512 2000 4500 "" "3" "onsolder,square"]
-	Pad[-11810 0 -7874 0 5512 2000 4500 "" "2" "onsolder,square"]
-	Pad[-11810 7086 -7874 7086 5512 2000 4500 "" "1" "onsolder,square"]
-	ElementLine [9843 -9843 9843 9842 1000]
-	ElementLine [-9842 -9843 -9842 7874 1000]
-	ElementLine [9843 9842 -7874 9842 1000]
-	ElementLine [-7874 9842 -9842 7874 1000]
-	ElementLine [-9842 -9843 9843 -9843 1000]
-	ElementArc [0 0 8268 8268 180 90 1000]
-	ElementArc [0 -1 8268 8268 90 90 1000]
-	ElementArc [0 0 8268 8268 270 90 1000]
-	ElementArc [0 -1 8268 8268 0 90 1000]
-
-	)
-
-Element["" "PLCC6" "LED4" "00862" 366517 94305 0 0 0 100 ""]
-(
-	Pad[7874 -7086 11810 -7086 5512 2000 4500 "" "4" "onsolder,square,edge2"]
-	Pad[7874 0 11810 0 5512 2000 4500 "" "5" "onsolder,square,edge2"]
-	Pad[7874 7086 11810 7086 5512 2000 4500 "" "6" "onsolder,square,edge2"]
-	Pad[-11810 -7086 -7874 -7086 5512 2000 4500 "" "3" "onsolder,square"]
-	Pad[-11810 0 -7874 0 5512 2000 4500 "" "2" "onsolder,square"]
-	Pad[-11810 7086 -7874 7086 5512 2000 4500 "" "1" "onsolder,square"]
-	ElementLine [9843 -9843 9843 9842 1000]
-	ElementLine [-9842 -9843 -9842 7874 1000]
-	ElementLine [9843 9842 -7874 9842 1000]
-	ElementLine [-7874 9842 -9842 7874 1000]
-	ElementLine [-9842 -9843 9843 -9843 1000]
-	ElementArc [0 0 8268 8268 180 90 1000]
-	ElementArc [0 -1 8268 8268 90 90 1000]
-	ElementArc [0 0 8268 8268 270 90 1000]
-	ElementArc [0 -1 8268 8268 0 90 1000]
-
-	)
-
-Element["" "PLCC6" "LED5" "00862" 251968 57086 0 0 0 100 ""]
-(
-	Pad[7874 -7086 11810 -7086 5512 2000 4500 "" "4" "onsolder,square,edge2"]
-	Pad[7874 0 11810 0 5512 2000 4500 "" "5" "onsolder,square,edge2"]
-	Pad[7874 7086 11810 7086 5512 2000 4500 "" "6" "onsolder,square,edge2"]
-	Pad[-11810 -7086 -7874 -7086 5512 2000 4500 "" "3" "onsolder,square"]
-	Pad[-11810 0 -7874 0 5512 2000 4500 "" "2" "onsolder,square"]
-	Pad[-11810 7086 -7874 7086 5512 2000 4500 "" "1" "onsolder,square"]
-	ElementLine [9843 -9843 9843 9842 1000]
-	ElementLine [-9842 -9843 -9842 7874 1000]
-	ElementLine [9843 9842 -7874 9842 1000]
-	ElementLine [-7874 9842 -9842 7874 1000]
-	ElementLine [-9842 -9843 9843 -9843 1000]
-	ElementArc [0 0 8268 8268 180 90 1000]
-	ElementArc [0 -1 8268 8268 90 90 1000]
-	ElementArc [0 0 8268 8268 270 90 1000]
-	ElementArc [0 -1 8268 8268 0 90 1000]
-
-	)
-
-Element["" "PLCC6" "LED6" "00862" 137419 94305 0 0 0 100 ""]
-(
-	Pad[7874 -7086 11810 -7086 5512 2000 4500 "" "4" "onsolder,square,edge2"]
-	Pad[7874 0 11810 0 5512 2000 4500 "" "5" "onsolder,square,edge2"]
-	Pad[7874 7086 11810 7086 5512 2000 4500 "" "6" "onsolder,square,edge2"]
-	Pad[-11810 -7086 -7874 -7086 5512 2000 4500 "" "3" "onsolder,square"]
-	Pad[-11810 0 -7874 0 5512 2000 4500 "" "2" "onsolder,square"]
-	Pad[-11810 7086 -7874 7086 5512 2000 4500 "" "1" "onsolder,square"]
-	ElementLine [9843 -9843 9843 9842 1000]
-	ElementLine [-9842 -9843 -9842 7874 1000]
-	ElementLine [9843 9842 -7874 9842 1000]
-	ElementLine [-7874 9842 -9842 7874 1000]
-	ElementLine [-9842 -9843 9843 -9843 1000]
-	ElementArc [0 0 8268 8268 180 90 1000]
-	ElementArc [0 -1 8268 8268 90 90 1000]
-	ElementArc [0 0 8268 8268 270 90 1000]
-	ElementArc [0 -1 8268 8268 0 90 1000]
-
-	)
-
-Element["" "PLCC6" "LED7" "00862" 66624 191746 0 0 0 100 ""]
-(
-	Pad[7874 -7086 11810 -7086 5512 2000 4500 "" "4" "onsolder,square,edge2"]
-	Pad[7874 0 11810 0 5512 2000 4500 "" "5" "onsolder,square,edge2"]
-	Pad[7874 7086 11810 7086 5512 2000 4500 "" "6" "onsolder,square,edge2"]
-	Pad[-11810 -7086 -7874 -7086 5512 2000 4500 "" "3" "onsolder,square"]
-	Pad[-11810 0 -7874 0 5512 2000 4500 "" "2" "onsolder,square"]
-	Pad[-11810 7086 -7874 7086 5512 2000 4500 "" "1" "onsolder,square"]
-	ElementLine [9843 -9843 9843 9842 1000]
-	ElementLine [-9842 -9843 -9842 7874 1000]
-	ElementLine [9843 9842 -7874 9842 1000]
-	ElementLine [-7874 9842 -9842 7874 1000]
-	ElementLine [-9842 -9843 9843 -9843 1000]
-	ElementArc [0 0 8268 8268 180 90 1000]
-	ElementArc [0 -1 8268 8268 90 90 1000]
-	ElementArc [0 0 8268 8268 270 90 1000]
-	ElementArc [0 -1 8268 8268 0 90 1000]
-
-	)
-
-Element["" "PLCC6" "LED8" "00862" 66624 312190 0 0 0 100 ""]
-(
-	Pad[7874 -7086 11810 -7086 5512 2000 4500 "" "4" "onsolder,square,edge2"]
-	Pad[7874 0 11810 0 5512 2000 4500 "" "5" "onsolder,square,edge2"]
-	Pad[7874 7086 11810 7086 5512 2000 4500 "" "6" "onsolder,square,edge2"]
-	Pad[-11810 -7086 -7874 -7086 5512 2000 4500 "" "3" "onsolder,square"]
-	Pad[-11810 0 -7874 0 5512 2000 4500 "" "2" "onsolder,square"]
-	Pad[-11810 7086 -7874 7086 5512 2000 4500 "" "1" "onsolder,square"]
-	ElementLine [9843 -9843 9843 9842 1000]
-	ElementLine [-9842 -9843 -9842 7874 1000]
-	ElementLine [9843 9842 -7874 9842 1000]
-	ElementLine [-7874 9842 -9842 7874 1000]
-	ElementLine [-9842 -9843 9843 -9843 1000]
-	ElementArc [0 0 8268 8268 180 90 1000]
-	ElementArc [0 -1 8268 8268 90 90 1000]
-	ElementArc [0 0 8268 8268 270 90 1000]
-	ElementArc [0 -1 8268 8268 0 90 1000]
-
-	)
-
-Element["" "PLCC6" "LED9" "00862" 137419 409631 0 0 0 100 ""]
-(
-	Pad[7874 -7086 11810 -7086 5512 2000 4500 "" "4" "onsolder,square,edge2"]
-	Pad[7874 0 11810 0 5512 2000 4500 "" "5" "onsolder,square,edge2"]
-	Pad[7874 7086 11810 7086 5512 2000 4500 "" "6" "onsolder,square,edge2"]
-	Pad[-11810 -7086 -7874 -7086 5512 2000 4500 "" "3" "onsolder,square"]
-	Pad[-11810 0 -7874 0 5512 2000 4500 "" "2" "onsolder,square"]
-	Pad[-11810 7086 -7874 7086 5512 2000 4500 "" "1" "onsolder,square"]
-	ElementLine [9843 -9843 9843 9842 1000]
-	ElementLine [-9842 -9843 -9842 7874 1000]
-	ElementLine [9843 9842 -7874 9842 1000]
-	ElementLine [-7874 9842 -9842 7874 1000]
-	ElementLine [-9842 -9843 9843 -9843 1000]
-	ElementArc [0 0 8268 8268 180 90 1000]
-	ElementArc [0 -1 8268 8268 90 90 1000]
-	ElementArc [0 0 8268 8268 270 90 1000]
-	ElementArc [0 -1 8268 8268 0 90 1000]
 
 	)
 Layer(1 "component")
