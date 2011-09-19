@@ -1,0 +1,9 @@
+Ring with 10 RGB LEDs on 11.8mm Diameter
+========================================
+
+Planned Features:
+ * Powered by USB or USB Like Device (5V)
+ * SD Card for saving Animations
+ * 10 seperate controllable LEDs
+ * Programmable over USB via HID Device or other
+ * Flashable over USB
