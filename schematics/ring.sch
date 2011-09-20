@@ -256,7 +256,7 @@ device=RESISTOR
 T 46200 46700 5 10 1 1 90 0 1
 refdes=R1
 T 46500 46500 5 10 1 1 0 0 1
-value=1k
+value=2k1
 T 46500 46500 5 10 0 0 0 0 1
 footprint=SMD_CHIP_803
 }
@@ -267,7 +267,7 @@ device=RESISTOR
 T 51600 47200 5 10 1 1 90 0 1
 refdes=R2
 T 51900 47000 5 10 1 1 0 0 1
-value=1k
+value=2k1
 T 51900 47000 5 10 0 0 0 0 1
 footprint=SMD_CHIP_803
 }
