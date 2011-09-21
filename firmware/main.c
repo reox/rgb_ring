@@ -4,6 +4,8 @@
 #include "usbconfig.h"
 #include "usbdrv.h"
 
+#include "tlc594x.h"
+
 /*
  * if you want this to reset into the usbasploader, you need its bootLoaderInit
  * to set MCUCSR = 0 before wdt_disable and to really go to the bootloader if
@@ -17,24 +19,30 @@ void reset() {
 }
 
 int do_reset = 0;
+volatile int do_retransmit = 1;
 
 static uchar buffer[64];
+//uint16_t ledvalues[16*2] = {0x0, 0x100, 0x200, 0x300, 0x400, 0x500, 0x600, 0x700, 0x800, 0x900, 0xa00, 0xb00, 0xc00, 0xd00, 0xe00, 0xfff, };
+uint16_t ledvalues[16*2] = {0x0000, 0xffff, 0x0000, 0xffff, 0x0000, 0xffff, 0x0000, 0xffff, 0x0000, 0xffff, 0x0000, 0xffff, 0x0000, 0xffff, 0x0000, 0xffff, 0x0000, 0xffff, 0x0000, 0xffff, 0x0000, 0xffff, 0x0000, 0xffff, 0x0000, 0xffff, 0x0000, 0xffff, 0x0000, 0xffff, 0x0000, 0xffff};
 
 usbMsgLen_t usbFunctionSetup(uchar data[8]) {
     usbMsgLen_t len = 0;
     usbRequest_t *rq = (void *)data;
 
     switch(rq->bRequest) {
-	    /*
 	    case 1: // toggle led, return something meaningful in the buffer
-    		LED_TOGGLE();
 		len = 3;
 		if(len > rq->wLength.word) len = rq->wLength.word;
 		usbMsgPtr = buffer;
-		buffer[0] = 42;
-		buffer[1] = 23;
-		buffer[2] = 42;
+		buffer[0] = TCNT0;
+		buffer[1] = TIFR0;
+		buffer[2] = 23;
 		return len;
+	    case 2:
+		do_retransmit = 1;
+		ledvalues[rq->wIndex.word] = rq->wValue.word << 4;
+		return 0;
+	    /*
 	    case 2: // read stored data
 		usbMsgPtr = stored_data + rq->wValue.word;
 		if (usbMsgPtr >= &(stored_data[STORED_LENGTH])) return 0;
@@ -81,11 +89,16 @@ int __attribute__((noreturn)) main(void) {
         _delay_ms(1);
     }
     usbDeviceConnect();
+    tlc_setup();
     sei();
     for(;;){
         usbPoll();
 	if(do_reset == 1) {
 		reset();
+	}
+	if (do_retransmit) {
+		tlc_send_blocking(ledvalues);
+		do_retransmit = 0;
 	}
     }
 }
