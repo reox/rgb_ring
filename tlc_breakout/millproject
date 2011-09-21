@@ -1,0 +1,31 @@
+metric=1
+
+# parameters for isolation routing / engraving / etching
+zwork=0 # that's what visolate uses, assuming it's ok for metalab cnc
+zsafe=5
+mill-feed=1000 # first value i try with new machine
+mill-speed=1 # it's static anyway
+offset=100 # voronoi up to 10cm
+milldrill=1
+
+# parameters for cutting out boards
+cutter-diameter=0.8
+zcut=-1.8
+cut-feed=230
+cut-speed=1 # static anyway
+cut-infeed=0.95 # half way plus epsilon
+
+# drilling parameters
+zdrill=-0.0984
+zchange=2
+drill-feed=230
+drill-speed=1
+
+fill-outline=1
+outline-width=0.1 # minimal -- filling is just to reduce the holes
+
+back=tlc_breakout.back.gbr
+outline=tlc_breakout.outline.gbr
+drill=tlc_breakout.plated-drill.cnc
+
+dpi=600
