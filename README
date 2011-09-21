@@ -1,9 +1,4 @@
 Ring with 10 RGB LEDs on 11.8mm Diameter
 ========================================
 
-Planned features:
- * Powered by USB or USB Like Device (5V) using buck regulator (so 600mA (@3.3V) can be used from 500mA (@5V) USB; e.g. NCP3170ADR2G)
- * SD Card for saving animations in EmbedVM format
- * 10 seperate controllable RGB LEDs
- * controlable over USB via HID or programmable as mass storage device
- * flashable over USB
+See for a full documentation: http://reox.at/rgb_ring/

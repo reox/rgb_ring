@@ -21,7 +21,7 @@ BOOTLOADER_ADDRESS = 3800
 FUSEOPT = $(FUSEOPT_168)
 LOCKOPT = -U lock:w:0x2f:m
 
-PROGRAMMER = -c usbasp
+PROGRAMMER = -c usbasp 
 # PROGRAMMER = -c avrisp -P /dev/arduino -b 19200
 # PROGRAMMER contains AVRDUDE options to address your programmer
 
