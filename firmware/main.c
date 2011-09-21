@@ -1,4 +1,10 @@
-uint8_t main(){
+#include <avr/io.h>
+#include <avr/interrupt.h>
+#include <avr/pgmspace.h>
+#include <avr/wdt.h>
+#include <util/delay.h>
 
-return 0;
+uint8_t main(void){
+	
+	return 0;
 }
