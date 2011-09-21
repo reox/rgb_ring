@@ -575,3 +575,26 @@ value=1u
 T 50200 49400 5 10 0 1 0 0 1
 footprint=0805
 }
+C 44300 41100 1 0 0 capacitor-4.sym
+{
+T 44500 42200 5 10 0 0 0 0 1
+device=POLARIZED_CAPACITOR
+T 44500 41600 5 10 1 1 0 0 1
+refdes=C5
+T 44500 41800 5 10 0 0 0 0 1
+symversion=0.1
+T 44300 41100 5 10 0 0 0 0 1
+value=1u
+T 43100 40300 5 10 1 1 0 0 4
+comment=all the leds exposed an unnerving
+flickering, which disappeared when
+probed with the oscilloscope. adding
+the capacitor helped for unknown reasons.
+}
+N 45200 41300 45500 41300 4
+{
+T 45300 41300 5 10 1 1 0 0 1
+netname=GSCLK
+}
+C 43900 41300 1 0 0 3.3V-plus-1.sym
+N 44100 41300 44300 41300 4
