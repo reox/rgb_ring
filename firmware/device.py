@@ -1,7 +1,7 @@
 import usb
 
 MANUFACTURER = "sense.reox.at"
-PRODUCT = "http://sense.reox.at/usbbb/demo/"
+PRODUCT = "http://reox.at/rgb_ring/"
 
 def discover():
     my_device = None
