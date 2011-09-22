@@ -10,7 +10,7 @@
 #define GS_DDR DDRB
 #define GS_BIT 2
 
-#define DEVICES 1
+#define DEVICES 2
 
 
 /* atmega?8 hardware */

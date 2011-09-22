@@ -51,7 +51,7 @@ void tlc_setup()
 	XLAT_DDR |= (1<<XLAT_BIT);
 
 	BLANK_DDR |= (1<<BLANK_BIT);
-	BLANK_ACTIVE();
+	BLANK_INACTIVE();
 
 	/* timer 1 flicks the grayscale line */
 
@@ -63,7 +63,9 @@ void tlc_setup()
 	/* set prescaler to /1, resulting in a 16mhz clock */
 	TCCR1B = (TCCR1B & ~((1<<CS10) | (1<<CS11) | (1<<CS12))) | (1<<CS10);
 	/* match as often as possible; matches every second tick and has raising edge every 4th, resulting in a 4mhz clock */
-	OCR1A = OCR1B = 1;
+	// OCR1A = OCR1B = 1;
+        /* don't exaggerate -- we can tune here easily as long as OCR0A, which is derived from this, doesn't wrap */
+	OCR1A = OCR1B = 4;
 	TCNT1 = 0;
 	/* toggle PB2 (OC1B) very often */
 	TCCR1A |= (1<<COM1B0);
@@ -74,7 +76,7 @@ void tlc_setup()
 	TCCR0B = (1<<CS02);
 	/* we need a tick every 4096 ticks of timer1's 4mhz clock, that's at
 	 * 1khz. our base clock is 16khz. */
-	OCR0A = 16 * OCR1A;
+	OCR0A = (int)(16 * OCR1A * 2.5); // factor 2.5 experimentally from oscilloscope
 	/* on match, reset and call interrupt */
 	TCCR0A = (1<<WGM01);
 	TIMSK0 = (1<<OCIE0A);

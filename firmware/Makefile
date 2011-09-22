@@ -3,7 +3,7 @@ MCU=atmega168
 
 COMPILE = avr-gcc -Wall -Os -I. -Iusbdrv -mmcu=${MCU} -DF_CPU=${F_CPU} #-DBAUD=${BAUD}
 
-OBJECTS = main.o usbdrv/usbdrv.o usbdrv/usbdrvasm.o tlc594x.o
+OBJECTS = main.o usbdrv/usbdrv.o usbdrv/usbdrvasm.o tlc594x.o ledcontrol.o
 
 # symbolic targets:
 all:	main.hex
