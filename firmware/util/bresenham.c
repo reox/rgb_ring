@@ -5,7 +5,7 @@
  * axis ("ticks")
  *
  * i'm not sure this is accurate for steep cases (in that sense that i didn't
- * bother which of the "pixels" is shown for a given x value)
+ * bother which of the "pixels" is shown for a given x value). plus, in the steep case, this might be sped up as we only need one pixel anyway.
  * */
 
 #include <stdint.h>
@@ -51,7 +51,14 @@ static bool bresenham_step(bresenham_state *state, uint16_t *value)
     while (1) {
         e2 = 2*state->err;
 
+#ifdef BRESENHAM_DEBUG
+        printf("in loop. did_increment %c, did_change %c, e2 %d, dx %d, _dy %d, err %d, dx_reaining %d, target %d\n", did_increment ? 'y' : 'n', did_change ? 'y' : 'n', e2, state->dx, state->_dy, state->err, state->dx_remaining, state->target);
+#endif
+
         if (e2 > -dy(state)) {
+#ifdef BRESENHAM_DEBUG
+            printf("took first if.\n");
+#endif
             state->err -= dy(state);
             state->dx_remaining--;
             did_increment = true;
@@ -61,7 +68,13 @@ static bool bresenham_step(bresenham_state *state, uint16_t *value)
             }
             break;
         }
-        if (e2 < state->dx) {
+	/* be very careful when comparing int16_t and uint16_t -- explicitly
+	 * splitting and casting to avoid big problems */
+        //if (e2 < state->dx) {
+        if (e2 < 0 || (uint16_t)e2 < state->dx) {
+#ifdef BRESENHAM_DEBUG
+            printf("took second if.\n");
+#endif
             state->err += state->dx;
             *value += sy(state);
             did_change = true;

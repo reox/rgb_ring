@@ -1,0 +1,5 @@
+the brensenheim demo was used in debugging the implementation -- it didn't
+terminate on avr as the (int16_t) < (uint16_t) comparison was implicitly
+converted to uint16_t, where negative < positive didn't always return true.
+that was especially weird to debug as it worked on x86, where i assume larger
+types to be used for performance reasons.

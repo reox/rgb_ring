@@ -1,12 +1,17 @@
 #include <stdint.h>
 #include <stdio.h>
 
+#define BRESENHAM_DEBUG
 #include "bresenham.c"
+
+#include "arduino_io.c"
 
 int main()
 {
     uint16_t value;
     bresenham_state fading;
+
+    init_uart();
 
     printf("Initializing fading\n");
 

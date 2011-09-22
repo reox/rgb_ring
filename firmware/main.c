@@ -41,27 +41,13 @@ usbMsgLen_t usbFunctionSetup(uchar data[8]) {
 		led_value[16] = 0;
 		led_fade_to(16, 0xfff, 0x20);
 		
-		len = 6;
-		if(len > rq->wLength.word) len = rq->wLength.word;
-		usbMsgPtr = buffer;
-//		buffer[-6] = led_value[16]>>8;
-//		buffer[-5] = led_value[16] & 0xff;
-//		buffer[-4] = led_fading[16].dx>>8;
-//		buffer[-3] = led_fading[16].dx & 0xff;
-//		buffer[-2] = led_fading[16]._dy>>8;
-//		buffer[-1] = led_fading[16]._dy & 0xff;
-		buffer[0] = led_fading[16].err>>8;
-		buffer[1] = led_fading[16].err & 0xff;
-		buffer[2] = led_fading[16].dx_remaining>>8;
-		buffer[3] = led_fading[16].dx_remaining & 0xff;
-		buffer[4] = led_fading[16].target>>8;
-		buffer[5] = led_fading[16].target & 0xff;
-		return len;
+		return 0;
 	    case 3:
-		len = 1;
+		len = 2;
 		if(len > rq->wLength.word) len = rq->wLength.word;
 		usbMsgPtr = buffer;
-		buffer[0] = led_value[16]/256;
+		buffer[0] = led_value[16]>>8;
+		buffer[1] = led_value[16]&0xff;
 		return len;
 	    /*
 	    case 2: // read stored data
@@ -103,17 +89,6 @@ int __attribute__((noreturn)) main(void) {
     uchar i;
 
     wdt_disable();
-
-
-    uint16_t value;
-    bresenham_state fading;
-    value = 0;
-    bresenham_init(&fading, value, 0xfff, 0x20);
-    do {
-        bresenham_step(&fading, &value);
-    } while (!bresenham_finished(&fading));
-
-
     tlc_setup();
     usbInit();
     usbDeviceDisconnect();  /* enforce re-enumeration, do this while interrupts are disabled! */
