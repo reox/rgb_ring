@@ -23,6 +23,8 @@ int do_reset = 0;
 
 static uchar buffer[64];
 
+int write_position, write_remaining;
+
 usbMsgLen_t usbFunctionSetup(uchar data[8]) {
     usbMsgLen_t len = 0;
     usbRequest_t *rq = (void *)data;
@@ -49,16 +51,10 @@ usbMsgLen_t usbFunctionSetup(uchar data[8]) {
 		buffer[0] = led_value[16]>>8;
 		buffer[1] = led_value[16]&0xff;
 		return len;
-	    /*
-	    case 2: // read stored data
-		usbMsgPtr = stored_data + rq->wValue.word;
-		if (usbMsgPtr >= &(stored_data[STORED_LENGTH])) return 0;
-		return (rq->wLength.word + usbMsgPtr > &(stored_data[STORED_LENGTH])) ? &(stored_data[STORED_LENGTH]) - usbMsgPtr : rq->wLength.word;
-	    case 3: // write stored data
-		write_position = rq->wValue.word;
-		write_remaining = (rq->wLength.word >= STORED_LENGTH - write_position) ? (STORED_LENGTH - write_position) : rq->wLength.word;
-		return USB_NO_MSG;
-		*/
+            case 's': // set all leds; this interface is just an immediate development aid, it's limited to 8bit channels and doesn't do the de-multiplexing in firmware
+                write_position = rq->wIndex.word;
+		write_remaining = (rq->wLength.word >= 32 - write_position) ? (32 - write_position) : rq->wLength.word;
+                return USB_NO_MSG;
 	    case 255:
                 do_reset = 1;
 		return 0;
@@ -69,20 +65,20 @@ usbMsgLen_t usbFunctionSetup(uchar data[8]) {
 
 uchar usbFunctionWrite(uchar *data, uchar len)
 {
-	/*
+        /* if you got here reading the code, you already know that this is just an intermediate step in code development */
 	uchar i;
 
 	if (len > write_remaining) len = write_remaining;
 
 	for (i = 0; i < len; ++i)
 	{
-		stored_data[write_position + i] = data[i];
+                // especially, this is asking for problems with fading; current fades will not be aborted
+		led_value[write_position++] = data[i]<<4;
 	}
+        led_requires_retransmit = 1;
 
 	write_remaining -= len;
-	write_position += len;
 	return write_remaining <= 0;
-	*/
 }
 
 int __attribute__((noreturn)) main(void) {
