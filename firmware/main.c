@@ -84,7 +84,8 @@ uchar usbFunctionWrite(uchar *data, uchar len)
 int __attribute__((noreturn)) main(void) {
     uchar i;
 
-    wdt_disable();
+    /* better safe than sorry. especially, as long as this is kept early in the code, no program can be broken that badly that the device doesn't return to the bootloader w/o the developer having to touch internal (reset) pins. */
+    wdt_enable(WDTO_8S);
     tlc_setup();
     usbInit();
     usbDeviceDisconnect();  /* enforce re-enumeration, do this while interrupts are disabled! */
@@ -105,5 +106,6 @@ int __attribute__((noreturn)) main(void) {
 	}
 	_delay_ms(1);
 	led_fade_step_all();
+	wdt_reset();
     }
 }
