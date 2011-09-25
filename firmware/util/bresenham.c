@@ -34,6 +34,11 @@ static void bresenham_init(bresenham_state *state, uint16_t initial, uint16_t ta
     state->err = state->dx - dy(state);
 }
 
+static void bresenham_uninit(bresenham_state *state)
+{
+	state->dx_remaining = 0;
+}
+
 static bool bresenham_finished(bresenham_state *state)
 {
     return state->dx_remaining == 0;

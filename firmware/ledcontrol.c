@@ -13,6 +13,17 @@ void led_fade_to(uint8_t channel, uint16_t target, uint16_t steps)
     bresenham_init(&led_fading[channel], led_value[channel], target, steps);
 }
 
+uint16_t led_get_current(uint8_t channel)
+{
+	return led_value[channel];
+}
+
+void led_set_to(uint8_t channel, uint16_t value)
+{
+    bresenham_uninit(&led_fading[channel]);
+    led_value[channel] = value;
+}
+
 static void led_fade_step(uint8_t channel)
 {
     led_requires_retransmit |= bresenham_step(&led_fading[channel], &led_value[channel]);

@@ -36,11 +36,11 @@ static void populate_buffer(uint16_t *data)
 		read_cursor = 2*i;
 		write_cursor = 3*i;
 
-		buffer[write_cursor+0] = (data[read_cursor+0] >> 4) & 0xff;
-		buffer[write_cursor+1] = (data[read_cursor+0] & 0xff) << 4;
+		buffer[write_cursor+0] = (data[read_cursor+0] >> 8) & 0xff;
+		buffer[write_cursor+1] = (data[read_cursor+0] & 0xf0);
 
-		buffer[write_cursor+1] |= (data[read_cursor+1] >> 8) & 0x0f;
-		buffer[write_cursor+2] = data[read_cursor+1] & 0xff;
+		buffer[write_cursor+1] |= (data[read_cursor+1] >> 12) & 0x0f;
+		buffer[write_cursor+2] = (data[read_cursor+1] >> 4) & 0xff;
 	}
 }
 

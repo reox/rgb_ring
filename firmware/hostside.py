@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import time
+import itertools
 
 from device import discover
 import usb
@@ -13,7 +14,9 @@ def set_rgb(data):
     set_leds(data)
 
 def set_leds(data):
-    my_handle.controlMsg(usb.TYPE_VENDOR | usb.RECIP_DEVICE | usb.ENDPOINT_OUT, ord('s'), data, index=0)
+    # 10*10ms fade time, data shifted to 16bit level
+    data = itertools.chain(*zip([0]*len(data), [10]*len(data), data, [0]*len(data)))
+    my_handle.controlMsg(usb.TYPE_VENDOR | usb.RECIP_DEVICE | usb.ENDPOINT_OUT, ord('f'), data, index=0)
 
 def send_image(filename):
     i = Image.open(filename)
