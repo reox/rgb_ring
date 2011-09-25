@@ -1,6 +1,13 @@
-/* this is a 10ms clock */
+/* this is a 10ms clock
+ *
+ * this relies on nothing to disable interrupts for longer than 0.2ms. if this
+ * is too short (FIXME: check for overflow -- but this would have to happen at
+ * *all* sei() positions), we have to trigger the interrupts in larger
+ * intervals and accpet some jitter in the timing.
+ * */
 
 uint8_t secondsem4 = 0; // counter for seconds^-4. not volatile as it's only ever used in the interrupt.
+volatile uint8_t unhandled_10ms_ticks = 0;
 
 void milliseconds_setup()
 {
@@ -17,6 +24,6 @@ ISR(TIMER2_COMPA_vect)
 	secondsem4 += 2; // 0.2ms passed
 	if (secondsem4 >= 100) {
 		secondsem4 -= 100;
-		tick_10ms();
+		unhandled_10ms_ticks += 1;
 	}
 }
