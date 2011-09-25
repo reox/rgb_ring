@@ -7,6 +7,10 @@
 #include "system.h"
 #include "usb.h"
 
+void tick_10ms();
+
+#include "milliseconds.c" 
+
 int __attribute__((noreturn)) main(void) {
     system_init();
     tlc_setup();
@@ -26,4 +30,8 @@ int __attribute__((noreturn)) main(void) {
 	led_fade_step_all();
 	wdt_reset();
     }
+}
+
+void tick_10ms()
+{
 }
