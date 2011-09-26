@@ -1,9 +1,12 @@
 #ifndef SYSTEM_H
 #define SYSTEM_H
 
+#include <stdint.h>
 #include <avr/wdt.h>
 
 extern int do_reset;
+
+extern uint16_t millis;
 
 static inline void system_init() {
     /* inline to get as-fast-as-possible watchdog setting.

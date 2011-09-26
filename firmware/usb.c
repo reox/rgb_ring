@@ -29,18 +29,21 @@ usbMsgLen_t usbFunctionSetup(uchar data[8]) {
     last_command = rq->bRequest;
 
     switch(rq->bRequest) {
-	    case 1: // toggle led, return something meaningful in the buffer
-		len = 3;
+	    case 1: // pure debugging functions, may change w/o notice
+		len = 6;
 		if(len > rq->wLength.word) len = rq->wLength.word;
 		usbMsgPtr = buffer;
 		buffer[0] = led_value[16]>>4;
 		buffer[1] = 42;
-		buffer[2] = 23;
+		buffer[2] = 0;
+		buffer[3] = 23;
+		buffer[4] = millis>>8;
+		buffer[5] = millis & 0xff;
 		return len;
 	    case 2:
 		led_requires_retransmit = 1;
 		led_value[16] = 0;
-		led_fade_to(16, 0xfff, 0x20);
+		led_fade_to(16, 0x0fff, 100);
 		
 		return 0;
 	    case 3:
@@ -105,7 +108,7 @@ uchar usbFunctionWrite(uchar *data, uchar len)
 				set_channel = write_position/2;
 				set_value = data[i] << 8;
 			} else {
-				led_set_to(set_channel, set_value | data[i]);
+				led_set_to(set_channel, (set_value | data[i])>>4);
 			}
 
 			write_position += 1;
@@ -128,7 +131,7 @@ uchar usbFunctionWrite(uchar *data, uchar len)
 				set_value = data[i] << 8;
 				break;
 			case 3:
-				led_fade_to(set_channel, set_value | data[i], set_time);
+				led_fade_to(set_channel, (set_value | data[i])>>4, set_time);
 				break;
 			}
 

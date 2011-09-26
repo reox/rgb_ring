@@ -9,7 +9,7 @@
 
 void tlc_setup();
 
-// actually, it's uint16_t data[DEVICES*16]. each entry's least significant 4 bits are discarded.
+// actually, it's uint16_t data[DEVICES*16]. each entry's most significant 4 bits are ignored.
 void tlc_send_blocking(uint16_t *data);
 
 void pull_blank();

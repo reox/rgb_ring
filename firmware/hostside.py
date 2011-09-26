@@ -14,9 +14,9 @@ def set_rgb(data):
     set_leds(data)
 
 def set_leds(data):
-    # 10*10ms fade time, data shifted to 16bit level
-    data = itertools.chain(*zip([0]*len(data), [10]*len(data), data, [0]*len(data)))
-    my_handle.controlMsg(usb.TYPE_VENDOR | usb.RECIP_DEVICE | usb.ENDPOINT_OUT, ord('f'), data, index=0)
+    # 20*10ms fade time, data shifted to 16bit level
+    data = itertools.chain(*zip([0]*len(data), [20]*len(data), data, [0]*len(data)))
+    my_handle.controlMsg(usb.TYPE_VENDOR | usb.RECIP_DEVICE | usb.ENDPOINT_OUT, ord('f'), list(data)[4*16:], index=16)
 
 def send_image(filename):
     i = Image.open(filename)
@@ -26,13 +26,22 @@ def send_image(filename):
         for x in range(i.size[0]):
             linedata[3*x:3*(x+1)] = i.getpixel((x, y))
         set_rgb(linedata)
-        time.sleep(0.1)
+        time.sleep(0.2)
+
+def single_command(command):
+    data = my_handle.controlMsg(usb.TYPE_VENDOR | usb.RECIP_DEVICE | usb.ENDPOINT_IN, command, 40)
+    print data
+    print [a<<8|b for (a, b) in zip(data[::2], data[1::2])]
 
 my_handle = discover()
 
-data = my_handle.controlMsg(usb.TYPE_VENDOR | usb.RECIP_DEVICE | usb.ENDPOINT_IN, 2, 40)
-print data
-print [a<<8|b for (a, b) in zip(data[::2], data[1::2])]
+single_command(1) # show nice 23/42 to show it's our firmware
+
+single_command(2) # fade led
+time.sleep(0.1)
+single_command(3) # show current led fade status
+time.sleep(0.1)
+single_command(3) # show current led fade status
 
 time.sleep(3) # wait until the led is faded; currently, fading is not aborted when explicitly setting leds
 

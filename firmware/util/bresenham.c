@@ -5,7 +5,12 @@
  * axis ("ticks")
  *
  * i'm not sure this is accurate for steep cases (in that sense that i didn't
- * bother which of the "pixels" is shown for a given x value). plus, in the steep case, this might be sped up as we only need one pixel anyway.
+ * bother which of the "pixels" is shown for a given x value). plus, in the
+ * steep case, this might be sped up as we only need one pixel anyway.
+ *
+ * don't paint lines over more than half the available values -- it's only
+ * 16bit here, and bad things will happen if something wraps (bad things =
+ * functions don't return)
  * */
 
 #include <stdint.h>

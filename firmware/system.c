@@ -5,6 +5,8 @@
 
 int do_reset = 0;
 
+uint16_t millis = 0;
+
 /*
  * if you want this to reset into the usbasploader, you need its bootLoaderInit
  * to set MCUCSR = 0 before wdt_disable and to really go to the bootloader if

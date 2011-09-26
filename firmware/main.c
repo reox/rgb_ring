@@ -15,6 +15,7 @@ int __attribute__((noreturn)) main(void) {
     system_init();
     tlc_setup();
     usb_init();
+    milliseconds_setup();
     sei();
 
     for(;;){
@@ -24,7 +25,9 @@ int __attribute__((noreturn)) main(void) {
 	}
 	while (unhandled_10ms_ticks) {
 		// should not loop more than once -- nothing should block the main loop for that long
+		millis += 10;
 		led_fade_step_all();
+		unhandled_10ms_ticks -= 1;
 	}
 	if (led_requires_retransmit) {
 		tlc_send_blocking(led_value);

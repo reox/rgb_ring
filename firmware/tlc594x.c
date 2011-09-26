@@ -36,11 +36,11 @@ static void populate_buffer(uint16_t *data)
 		read_cursor = 2*i;
 		write_cursor = 3*i;
 
-		buffer[write_cursor+0] = (data[read_cursor+0] >> 8) & 0xff;
-		buffer[write_cursor+1] = (data[read_cursor+0] & 0xf0);
+                buffer[write_cursor+0] = (data[read_cursor+0] >> 4) & 0xff;
+                buffer[write_cursor+1] = (data[read_cursor+0] & 0xff) << 4;
 
-		buffer[write_cursor+1] |= (data[read_cursor+1] >> 12) & 0x0f;
-		buffer[write_cursor+2] = (data[read_cursor+1] >> 4) & 0xff;
+                buffer[write_cursor+1] |= (data[read_cursor+1] >> 8) & 0x0f;
+                buffer[write_cursor+2] = data[read_cursor+1] & 0xff;
 	}
 }
 
@@ -76,7 +76,7 @@ void tlc_setup()
 	TCCR0B = (1<<CS02);
 	/* we need a tick every 4096 ticks of timer1's 4mhz clock, that's at
 	 * 1khz. our base clock is 16khz. */
-	OCR0A = (int)(16 * OCR1A * 2.5); // factor 2.5 experimentally from oscilloscope
+	OCR0A = (int)(16 * OCR1A * 2.5); // factor 2.5 experimentally from oscilloscope. FIXME 'zup?
 	/* on match, reset and call interrupt */
 	TCCR0A = (1<<WGM01);
 	TIMSK0 = (1<<OCIE0A);
